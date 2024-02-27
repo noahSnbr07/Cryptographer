@@ -5,19 +5,15 @@ import tiltOptions from '../assets/tiltOptions.json';
 import { Tilt } from 'react-tilt';
 import { Link } from 'react-router-dom';
 export default function Landing() {
-    console.log(tiltOptions)
     return (
         <div className='landing-page'>
             <section className='landing-description'>
-                <h1> Create <br />
-                    Encrypted <br />
-                    Messages <br />
-                    using  <br />
-                    Cryptographer <br />
+                <h1>
+                    Manage Encrypting and Decrypting all in one Place
                 </h1>
             </section>
             <section className='landing-image'>
-                <Tilt options={tiltOptions}>
+                <Tilt options={JSON.stringify(tiltOptions)}>
                     <img src={lock} alt='logo' draggable={false} />
                 </Tilt>
             </section>
