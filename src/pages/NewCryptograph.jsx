@@ -9,7 +9,7 @@ export default function NewCryptograph() {
     const [urlParams, setUrlParams] = useSearchParams({
         f: null,
         s: null,
-        t: null
+        k: null
     });
     const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ export default function NewCryptograph() {
                     className='form-key'
                     placeholder='Enter the Access Key' />
                 <button
-                    onClick={() => navigate(`/output?f=${isFunctionEncrypted ? 'encrypt' : 'decrypt'}&s=${encodeURIComponent(inputText)}&t=${encodeURIComponent(validationText)}`)}
+                    onClick={() => navigate(`/output?f=${isFunctionEncrypted ? 'encrypt' : 'decrypt'}&s=${encodeURIComponent(inputText)}&k=${encodeURIComponent(validationText)}`)}
                     className='form-submit'> Submit </button>
             </div>
             <textarea
