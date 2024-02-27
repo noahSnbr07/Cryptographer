@@ -1,22 +1,27 @@
 :root {
     --background: #0b1215;
     --accent: #FF4500;
-    --stack: #FFFFFF0D;
-    --color: rgb(255, 200, 200);
+    --stack: #ffffff0d;
+    --color: #FFFFFFFF;
     --gap: 10px;
     font-size: 16px;
-    border-radius: 0px;
+    --border-radius: 10px;
 }
 
 * {
-    overflow: hidden !important;
-    color: var(--color) !important;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.5;
+    transition: 200ms ease-out;
+    overflow: hidden;
+    color: var(--color);
     list-style-type: none !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
     font-family: Arial;
+
     /* CSS DEBUGGING FUNCTION */
-    border: 1px solid red;
+    /* border: 1px solid red !important; */
 }
 
 

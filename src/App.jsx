@@ -1,11 +1,12 @@
-import React from 'react'
-import Navbar from './utils/components/Navbar';
+import React from 'react';
+import './styles/viewport.css';
 import { Route, Routes } from 'react-router-dom';
+//components
+import Navbar from './utils/components/Navbar';
 import Landing from './pages/Landing';
 import NewCryptograph from './pages/NewCryptograph.jsx';
 import Output from './pages/Output.jsx';
 import Invalid from './pages/Invalid.jsx';
-import './styles/viewport.css';
 export default function App() {
   return (
     <>

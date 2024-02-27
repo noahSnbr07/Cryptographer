@@ -1,0 +1,80 @@
+.landing-page {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    padding: var(--gap);
+    gap: var(--gap);
+}
+
+.landing-page section {
+    padding: var(--gap);
+}
+
+.landing-page section h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    background: #FF4500;
+    background: linear-gradient(to right, #FF4500 0%, #CF1512 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landing-description {
+    grid-column: 1 / 4;
+    grid-row: 1 / 9;
+    text-align: end;
+}
+
+.landing-image {
+    grid-column: 4 / 11;
+    grid-row: 1 / 11;
+    display: grid;
+    place-items: center;
+}
+
+.landing-image div {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.landing-image div img {
+    max-height: 70%;
+    opacity: 0.5;
+}
+
+
+.landing-image div img:hover {
+    opacity: 1;
+}
+
+.landing-start {
+    grid-column: 1 / 4;
+    grid-row: 9 / 11;
+    display: grid;
+    place-items: center;
+}
+
+.landing-start a {
+    height: 100%;
+    width: 100%;
+    background-color: var(--stack);
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(45deg, orange, red) 1;
+    font-size: 3rem;
+    font-weight: 900;
+    display: grid;
+    place-items: center;
+}
+
+.landing-start a:hover {
+    cursor: pointer;
+    background-image: linear-gradient(45deg, orange, red);
+    border: none;
+}
+
+@media only screen and (max-width: 499px) {}
+
+@media only screen and (max-width: 499px) {}
