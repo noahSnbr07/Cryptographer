@@ -71,3 +71,25 @@
     outline: none;
     border: 5px solid var(--stack);
 }
+
+@media only screen and (max-width: 599px) {
+    .newcryptograph-page {
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .textarea {
+        height: 50%;
+        width: 100%;
+
+    }
+
+    .form {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
