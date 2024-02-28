@@ -6,17 +6,30 @@ export default function NewCryptograph() {
     const [isFunctionEncrypted, setFunctionISEncrypt] = useState(true);
     const [inputText, setInputText] = useState('');
     const [validationText, setValidationText] = useState('');
-    const [urlParams, setUrlParams] = useSearchParams({
-        f: null,
-        s: null,
-        k: null
-    });
+
     const navigate = useNavigate();
 
     const changeFunction = (newFunc) => {
         setFunctionISEncrypt(newFunc);
     }
 
+    const handleChangeForText = (e) => {
+        const inputValue = e.target.value;
+        const onlyLetters = /^[a-zA-Z ]+$/;
+
+        if (onlyLetters.test(inputValue) || inputValue === '') {
+            setValidationText(inputValue);
+        }
+    }
+
+    const handleChangeForKey = (e) => {
+        const inputValue = e.target.value;
+        const onlyNumbers = /^[0-9]*$/;
+
+        if (onlyNumbers.test(inputValue) || inputValue === '') {
+            setInputText(inputValue);
+        }
+    }
     return (
         <div className='newcryptograph-page'>
             <div className='form'>
@@ -35,18 +48,21 @@ export default function NewCryptograph() {
                     onClick={() => changeFunction(false)}
                     className='form-chose-func-2'> Decrypt </button>
                 <input
+                    type='text'
                     spellCheck={false}
-                    onChange={(e) => { setInputText(e.target.value); }}
+                    onChange={(e) => { handleChangeForKey(e) }}
                     value={inputText}
                     className='form-key'
                     placeholder='Enter the Access Key' />
                 <button
-                    onClick={() => navigate(`/output?f=${isFunctionEncrypted ? 'encrypt' : 'decrypt'}&s=${encodeURIComponent(inputText)}&k=${encodeURIComponent(validationText)}`)}
+                    onClick={() => {
+                        navigate(`/output?f=${isFunctionEncrypted ? 'encrypt' : 'decrypt'}&s=${encodeURIComponent(validationText)}&k=${encodeURIComponent(inputText)}`)
+                    }}
                     className='form-submit'> Submit </button>
             </div>
             <textarea
                 value={validationText}
-                onChange={(e) => { setValidationText(e.target.value) }}
+                onChange={(e) => { handleChangeForText(e) }}
                 spellCheck={false}
                 placeholder={`Enter ${isFunctionEncrypted ? 'Text to Encrypt it' : 'Encrypted Text'}`}
                 className='textarea'>
