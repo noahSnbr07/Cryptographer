@@ -9,7 +9,7 @@ export default function Landing() {
         <div className='landing-page'>
             <section className='landing-description'>
                 <h1>
-                    Manage Encrypting and Decrypting all in one Place
+                    Manage Encrypting as well as  Decrypting all in one Place
                 </h1>
             </section>
             <section className='landing-image'>
