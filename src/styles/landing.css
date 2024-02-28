@@ -12,12 +12,21 @@
 }
 
 .landing-page section h1 {
-    font-size: 4rem;
+    font-size: 4dvw;
     font-weight: 900;
     background: #FF4500;
-    background: linear-gradient(to right, #FF4500 0%, #CF1512 100%);
+    background: linear-gradient(45deg,
+            #FF4500 0%,
+            #ff0400 100%);
+    background-clip: linear-gradient(45deg,
+            #FF4500 0%,
+            #ff0400 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.25;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .landing-description {
@@ -62,7 +71,7 @@
     background-color: var(--stack);
     border-width: 5px;
     border-style: solid;
-    border-image: linear-gradient(45deg, orange, red) 1;
+    border-image: linear-gradient(135deg, orange, red) 1;
     font-size: 3rem;
     font-weight: 900;
     display: grid;
@@ -71,10 +80,34 @@
 
 .landing-start a:hover {
     cursor: pointer;
-    background-image: linear-gradient(45deg, orange, red);
+    background-image: linear-gradient(135deg, orange, red);
     border: none;
 }
 
-@media only screen and (max-width: 499px) {}
+.landing-start a:active {
+    background-image: linear-gradient(135deg, orange, red);
+}
 
-@media only screen and (max-width: 499px) {}
+@media only screen and (max-width: 699px) {
+    .landing-page section h1 {
+        font-size: 2rem;
+    }
+
+    .landing-description {
+        grid-column: 1 / 11;
+        grid-row: 1 / 3;
+        text-align: end;
+    }
+
+    .landing-image {
+        grid-column: 1 / 11;
+        grid-row: 3 / 9;
+        display: grid;
+        place-items: center;
+    }
+
+    .landing-start {
+        grid-column: 1 / 11;
+        grid-row: 9 / 11;
+    }
+}
